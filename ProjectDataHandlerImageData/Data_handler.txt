@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   Data handler  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Data handler will help you to "extract a small part of a input data" and
+generate training data and test data as input to feed into a classifier.
+
+
+Example 1: from AT&T image data, you use pickDataClass£¨£© subroutine explained below
+to select 5 class (50 images) and store the results in an data array or a data file.
+
+Example 2: from AT&T all data, or subset of it as the result of Example 1, generate a 
+training data using the first 9 images of a class and the test data using the class 1 image of the class. 
+This is done for all class in the input file. 
+
+Suppose, we use AT&T50 data. 
+Then the training data contains 
+9*5=45 images and the list of corresponding class labels. This is the trainDataXY.txt.
+The test data contains 1*5=40 images
+and the list of corresponding class labels. This is the testDataXY.txt.
+In computer exam, we give you testDataX.txt (no class labels in the test data file. Your task is to predict class labels.
+
+Example 3. Generate a 2-class data as the input to the 2-class SVM classifier.
+  From the hand-written-letter data, you first use "pickDataClass" subroutine and pick 
+  "C" and "F" classes and store them in a file or an array.
+  Then you use ¡°splitData2TestTrain" split the data: using the first 30 images in "C" and in "F" 
+  to form the training data, and using the remaining 9 images in each class to form the 
+  test data. Thus the training data contains 30*2 images, the test data contains 9*2 images.
+
+You need to write:
+
+subroutine-1: pickDataClass(filename, class_ids)
+ 
+  filename: char_string specifing the data file to read. For example, 'ATNT_face_image.txt'
+  class_ids:  array that contains the classes to be pick. For example: (3, 5, 8, 9)
+  Returns: an multi-dimension array or a file, containing the data (both attribute vectors and class labels) 
+           of the selected classes
+  We use this subroutine to pick a small part of the data to do experiments. For example for handwrittenletter data,
+  we can pick classes "C" and "F" for a 2-class experiment. Or we pick "A,B,C,D,E" for a 5-class experiment. 
+
+
+  test_instances: the data instances in each class to be used as test data.
+  We assume that the remaining data instances in each class (after the test data instances are taken out) will ne
+  training_instances
+
+
+subroutine-2: splitData2TestTrain(filename, number_per_class,  test_instances)
+  filename: char_string specifing the data file to read. This can also be an array containing input data.
+  number_per_class: number of data instances in each class (we assume every class has the same number of data instances)
+  test_instances: the data instances in each class to be used as test data.
+                  We assume that the remaining data instances in each class (after the test data instances are taken out) 
+                  will be training_instances 
+  Return/output: Training_attributeVector(trainX), Training_labels(trainY), Test_attributeVectors(testX), Test_labels(testY)
+  The data should easily feed into a classifier.
+
+  Example: splitData2TestTrain('Handwrittenletters.txt', 39, 1:20) 
+           Use entire 26-class handwrittenletters data. Each class has 39 instances.
+           In every class, first 20 images for testing, remaining 19 images for training
+
+subroutine-3:
+   This routine will store (trainX,trainY) into a training data file, 
+   and store (testX,testY) into a test data file. The format of these files is determined by 
+   student's choice: could be a matlab file, a text file, or a file convenient for Pythorn.  
+   These file should allow the data to be easily read and feed into a classifier.
+   During a COMPUTER QUIZ, you use this routine to save the files and submit them as part of the quiz results.
+
+
+Subroutine-4: "letter_2_digit_convert" that converts a character string to an integer array. 
+   For example,letter_2_digit_convert('ACFG') returns array (1, 3, 6, 7). 
+   A COMPUTER QUIZ problem could be: Pick 5 classes with letters 'great' from the hand-written-letter data, and 
+     generate training and testing data using first 20 images of each class for training and the rest 19 images for test.
+     You will need to use  letter_2_digit_convert('GREAT') to convert to numbers and then subroutine-1 to pick the subset
+     of the needed data.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In computer quiz, it is very likely that the quiz problem/task is
+
+On handwritten letter data, 
+pick 10 classes accorindg to some method (to be explain during the quiz).
+You use the handler routine to generate training and test data files.
+Using the first 10 images in each class to form the training data. 
+Using the remaining 29 images in each class to form the test data.
+It is also possible that we use first 5 images in each class for training, 
+and remaining 34 images in each class for testing.
+Whether it is (train=10 test=29) split or (train=5 test=34) split, or some other split,
+that will be determined during the quiz.
+
+After you generate the training data and test data,
+you need to fead them into classifier, i.e., train the classifier, 
+and compute the class labels for for each test data instance.
+You need to submit these predicted class labels. 
+What classifier to use in quiz is determined at quiz time.
+
+
+

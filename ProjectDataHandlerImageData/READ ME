@@ -1,0 +1,28 @@
+		—-----———----------------------————- READ  ME —-----------------------————————————
+
+Packages to install:
+	•	pandas
+	•	numpy
+	•	matplotlib
+	•	sklearn
+
+
+-------------------------------------- Instruction -------------------------------------------------------
+
+
+
+This is a python3 project
+
+1. Keep the project2.py file in the same folder as the two dataset - ATNTface dataset and handwritten dataset
+2. Go to the terminal that contains the project2.py file and run
+
+python project2.py
+OR
+python3 project2.py
+(if your python 3 is linked to command python3)
+
+3. For Question A - input data as given in the instructions in the terminal
+
+
+
+--------------------------------------------------------------------------------------------------------------

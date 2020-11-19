@@ -57,7 +57,7 @@ Hand-written-letters data are harder to classify, i.e., you get lower classifica
 You run classifier on hand-written-letter data only after you are confident 
 that your classifier works correctly.
 
-## %%%%%%%%%%%%%%%%%%%%    Your 5 tasks A, B, C, D, E  %%%%%%%%%%%%%%%%%%%%%%%%%
+## %%%%%%%%%%%%%    Your 5 tasks A, B, C, D, E  %%%%%%%%%%%%%%%%%%%
 Purpose:
 (1)  Implement Centroid methods by yourself.
 (2)  Learn to use Linear Regression £¨this is optional).

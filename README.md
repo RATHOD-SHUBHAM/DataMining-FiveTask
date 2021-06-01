@@ -1,30 +1,30 @@
 # DataMining-FiveTask
 ## This Project has 5 tasks. See "Your 5 Tasks" below
 
-In ATNT50 directory we have
+### In ATNT50 directory we have
 
-trainDataXY.txt   
+- trainDataXY.txt   
 
 It contains 45 images. image 1-9 from class 1. image 10-18 from class 2. etc.
 Each image is a column. 1st row are class labels.
 
-testDataXY.txt     
+- testDataXY.txt     
 
 It contain 5 images. 
 Each image is a column. 1st row are class labels.
 
 ------------------------------------------------------------------------------------
-* You train the classifier using training data. Once classifier is trained,
-  you classifier the data in testData, and compare the obtained class labels 
-  to the ground-truth label provided there. 
+You train the classifier using training data. Once classifier is trained,
+you classifier the data in testData, and compare the obtained class labels 
+to the ground-truth label provided there. 
 
-* These two data are simple training and testing data.
-   They are warm-up data, so you can see how your classifier work on this simple data. 
+These two data are simple training and testing data.
+They are warm-up data, so you can see how your classifier work on this simple data. 
 
 -------------------------------------------------------------------------------------
 
 
-data set: ATNT-face-image400.txt  :
+### data set: ATNT-face-image400.txt  :
 
 Text file. 
 1st row is cluster labels. 
@@ -34,7 +34,7 @@ Total 40 classes. each class has 10 images. Total 40*10=400 images
 
 ----------------------------------------------------------------------------------------
 
-data set: Hand-written-26-letters.txt :
+### data set: Hand-written-26-letters.txt :
 
 Text file. 
 1st row is cluster labels. 
@@ -45,7 +45,7 @@ Total 26 classes. each class has 39 images. Total 26*39=1014 images.
 
 -------------------------------------------------------------------------------------
 Once you are confident that your classifier works correctly,
-you are to use 5-fold cross-validation (CV) assess/evaluate the classifier.
+you are to use *5-fold cross-validation* (CV) assess/evaluate the classifier.
 You do CV using the following two full datasets.
 
 ATNT face images data are generally easier, i.e., you get high classification accuracy.

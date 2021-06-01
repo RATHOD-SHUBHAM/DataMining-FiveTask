@@ -14,12 +14,12 @@ It contain 5 images.
 Each image is a column. 1st row are class labels.
 
 ------------------------------------------------------------------------------------
-You train the classifier using training data. Once classifier is trained,
-you classifier the data in testData, and compare the obtained class labels 
-to the ground-truth label provided there. 
+* You train the classifier using training data. Once classifier is trained,
+  you classifier the data in testData, and compare the obtained class labels 
+  to the ground-truth label provided there. 
 
-These two data are simple training and testing data.
-They are warm-up data, so you can see how your classifier work on this simple data. 
+* These two data are simple training and testing data.
+   They are warm-up data, so you can see how your classifier work on this simple data. 
 
 -------------------------------------------------------------------------------------
 
